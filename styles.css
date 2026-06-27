@@ -141,6 +141,14 @@ main {
   min-height: calc(100vh - 68px);
 }
 
+.plugin-hero {
+  min-height: auto;
+}
+
+.home-hero {
+  min-height: min(640px, calc(100vh - 68px));
+}
+
 .hero-text {
   max-width: 720px;
 }
@@ -225,6 +233,45 @@ li {
 .button.primary {
   border-color: transparent;
   background: var(--ruby);
+}
+
+.plugin-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.plugin-card {
+  display: grid;
+  grid-template-columns: 118px minmax(0, 1fr);
+  gap: 18px;
+  align-items: center;
+}
+
+.plugin-card img {
+  width: 118px;
+  height: 118px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  object-fit: cover;
+  background: #050607;
+}
+
+.plugin-card .button {
+  margin-top: 8px;
+}
+
+.home-plugin-grid {
+  align-items: stretch;
+}
+
+.home-plugin-card {
+  grid-template-columns: 150px minmax(0, 1fr);
+}
+
+.home-plugin-card img {
+  width: 150px;
+  height: 150px;
 }
 
 .grid,
@@ -420,7 +467,8 @@ pre {
   .grid,
   .status-grid,
   .faq,
-  .simple-list {
+  .simple-list,
+  .plugin-grid {
     grid-template-columns: 1fr;
   }
 
@@ -451,4 +499,26 @@ pre {
   .hero-image {
     max-width: 240px;
   }
+
+  .plugin-card {
+    grid-template-columns: 76px minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .plugin-card img {
+    width: 76px;
+    height: 76px;
+  }
+
+  .home-plugin-card {
+    grid-template-columns: 1fr;
+  }
+
+  .home-plugin-card img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    max-width: 220px;
+  }
+
 }

@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FoliaNPC Documentation</title>
+  <meta name="description" content="FoliaNPC documentation for player-style NPCs on Spigot, Paper and Folia.">
+  <link rel="icon" href="assets/folianpc-logo.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page">
+    <aside class="sidebar" aria-label="FoliaNPC navigation">
+      <a class="brand" href="folianpc.html">
+        <img src="assets/folianpc-logo.png" alt="FoliaNPC logo">
+        <span>FoliaNPC</span>
+      </a>
+
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="itemslite.html">ItemsLite</a>
+        <a href="#overview">Description</a>
+        <a href="#features">Features</a>
+        <a href="#install">Installation</a>
+        <a href="#commands">Commands</a>
+        <a href="#permissions">Permissions</a>
+        <a href="#compatibility">Compatibility</a>
+        <a href="#troubleshooting">Troubleshooting</a>
+      </nav>
+
+      <div class="sidebar-note">
+        <strong>FoliaNPC</strong>
+        <span>NPCs for Spigot, Paper and Folia.</span>
+      </div>
+    </aside>
+
+    <main>
+      <section id="overview" class="hero section-block">
+        <div class="hero-text">
+          <p class="eyebrow">Spigot, Paper and Folia plugin</p>
+          <h1>Player-style NPCs with commands, dialogs and holograms.</h1>
+          <p class="lead">
+            FoliaNPC creates lightweight fake-player NPCs for server lobbies, guides, shops, quests and interactive menus. It is designed to stay compatible with Folia region scheduling while still running on Spigot and Paper.
+          </p>
+          <div class="quick-actions" aria-label="FoliaNPC quick links">
+            <a class="button primary" href="#install">Install</a>
+            <a class="button" href="#commands">Commands</a>
+            <a class="button" href="#compatibility">Compatibility</a>
+          </div>
+        </div>
+        <img class="hero-image" src="assets/folianpc-logo.png" alt="FoliaNPC plugin artwork">
+      </section>
+
+      <section id="features" class="section-block">
+        <p class="eyebrow">What it does</p>
+        <h2>FoliaNPC features</h2>
+        <div class="grid">
+          <article>
+            <h3>Player-style NPCs</h3>
+            <p>Render fake-player NPCs with names, skins, rotation and per-player visibility.</p>
+          </article>
+          <article>
+            <h3>Click Actions</h3>
+            <p>Run console or player commands from right-click, left-click or both-click triggers.</p>
+          </article>
+          <article>
+            <h3>Dialogs</h3>
+            <p>Send configurable dialog lines with built-in placeholders and optional PlaceholderAPI support.</p>
+          </article>
+          <article>
+            <h3>Holograms</h3>
+            <p>Show the NPC name, description lines, both, or no hologram above the NPC.</p>
+          </article>
+          <article>
+            <h3>Skin Tools</h3>
+            <p>Use skins from online players, Mojang texture URLs, raw texture values or clear skins.</p>
+          </article>
+          <article>
+            <h3>YAML Import and Export</h3>
+            <p>Store NPCs in simple YAML files and export individual NPCs for reuse.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="install" class="section-block two-column">
+        <div>
+          <p class="eyebrow">Setup</p>
+          <h2>How to install FoliaNPC</h2>
+          <ol class="steps">
+            <li>Build or download <code>FoliaNPC.jar</code>.</li>
+            <li>Put the jar inside your server <code>plugins</code> folder.</li>
+            <li>Install <code>EntityPacketBridge</code> for modern-NMS click support, or install <code>PacketEvents</code> as the fallback renderer.</li>
+            <li>Start the server once to generate configuration files.</li>
+            <li>Edit <code>plugins/FoliaNPC/config.yml</code> if you want to force a renderer or change defaults.</li>
+            <li>Create your first NPC with <code>/npc create &lt;id&gt; [name]</code>.</li>
+          </ol>
+        </div>
+        <div class="note">
+          <h3>Generated files</h3>
+          <code>plugins/FoliaNPC/config.yml</code>
+          <code>plugins/FoliaNPC/messages.yml</code>
+          <code>plugins/FoliaNPC/npcs.yml</code>
+          <code>plugins/FoliaNPC/exports/&lt;id&gt;.yml</code>
+        </div>
+      </section>
+
+      <section id="commands" class="section-block">
+        <p class="eyebrow">Admin commands</p>
+        <h2>FoliaNPC commands</h2>
+        <div class="table">
+          <div><code>/npc create &lt;id&gt; [name]</code><span>Create an NPC at your current location.</span></div>
+          <div><code>/npc remove &lt;id&gt;</code><span>Remove an existing NPC.</span></div>
+          <div><code>/npc list</code><span>List all created NPCs.</span></div>
+          <div><code>/npc select &lt;id&gt;</code><span>Set an NPC as your active selection.</span></div>
+          <div><code>/npc info [id]</code><span>Show NPC details.</span></div>
+          <div><code>/npc tp [id]</code><span>Move the selected NPC, or the given NPC, to you.</span></div>
+          <div><code>/npc move &lt;id&gt; &lt;x&gt; &lt;y&gt; &lt;z&gt; [yaw] [pitch]</code><span>Move an NPC to exact coordinates.</span></div>
+          <div><code>/npc rename &lt;id&gt; &lt;name&gt;</code><span>Change the NPC display name.</span></div>
+          <div><code>/npc skin &lt;id&gt; player &lt;onlinePlayer&gt;</code><span>Copy a skin from an online player.</span></div>
+          <div><code>/npc skin &lt;id&gt; url &lt;url&gt; [slim|wide]</code><span>Set a skin from a texture URL.</span></div>
+          <div><code>/npc action &lt;id&gt; add &lt;right|left|both&gt; &lt;console|player&gt; &lt;command&gt;</code><span>Add a click action.</span></div>
+          <div><code>/npc dialog &lt;id&gt; set &lt;line1 | line2&gt;</code><span>Set dialog lines.</span></div>
+          <div><code>/npc hologram &lt;id&gt; mode &lt;name|description|both|none&gt;</code><span>Choose which hologram lines are visible.</span></div>
+          <div><code>/npc export &lt;id&gt;</code><span>Export an NPC to YAML.</span></div>
+          <div><code>/npc import &lt;file&gt;</code><span>Import an NPC from the exports folder.</span></div>
+          <div><code>/npc reload</code><span>Reload configuration, messages and NPC data.</span></div>
+        </div>
+      </section>
+
+      <section id="permissions" class="section-block">
+        <p class="eyebrow">Access control</p>
+        <h2>FoliaNPC permissions</h2>
+        <div class="table compact">
+          <div><code>folianpc.admin</code><span>Allows creating, removing and configuring NPCs.</span></div>
+        </div>
+      </section>
+
+      <section id="compatibility" class="section-block">
+        <p class="eyebrow">Versions</p>
+        <h2>FoliaNPC compatibility</h2>
+        <div class="status-grid">
+          <article>
+            <strong>Spigot 1.20+</strong>
+            <span>Supported with the PacketEvents fallback renderer.</span>
+          </article>
+          <article>
+            <strong>Paper 1.20+</strong>
+            <span>Supported with modern NMS rendering and EntityPacketBridge for interactions.</span>
+          </article>
+          <article>
+            <strong>Folia 1.20+</strong>
+            <span>Uses Folia-aware scheduling for region and entity tasks.</span>
+          </article>
+        </div>
+      </section>
+
+      <section id="troubleshooting" class="section-block">
+        <p class="eyebrow">Help</p>
+        <h2>FoliaNPC common problems</h2>
+        <div class="faq">
+          <article>
+            <h3>NPCs do not render</h3>
+            <p>Install EntityPacketBridge or PacketEvents. If <code>compatibility.require-player-renderer</code> is enabled, FoliaNPC disables itself when no renderer is available.</p>
+          </article>
+          <article>
+            <h3>Clicks do not run actions</h3>
+            <p>Use EntityPacketBridge with the modern renderer, or PacketEvents with the fallback renderer. Check <code>/npc debug [id]</code> for backend status.</p>
+          </article>
+          <article>
+            <h3>Skin does not update</h3>
+            <p>Use a Mojang texture URL or copy a skin from an online player, then move out of range and back in or run <code>/npc reload</code>.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
