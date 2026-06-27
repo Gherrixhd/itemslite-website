@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ItemsLite - Custom Items, Blocks and Armor</title>
+  <meta name="description" content="ItemsLite is a lightweight Paper plugin for custom items, custom blocks, visual armor, recipes and automatic resource pack generation.">
+  <link rel="icon" href="assets/itemslite-logo.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page">
+    <aside class="sidebar" aria-label="Site navigation">
+      <a class="brand" href="#overview">
+        <img src="assets/itemslite-logo.png" alt="ItemsLite logo">
+        <span>ItemsLite</span>
+      </a>
+
+      <nav>
+        <a href="#overview">Description</a>
+        <a href="#features">Features</a>
+        <a href="#download">Download</a>
+        <a href="#install">Installation</a>
+        <a href="#resource-pack">Resource Pack</a>
+        <a href="#armor">Custom Armor</a>
+        <a href="#blocks">Custom Blocks</a>
+        <a href="#commands">Commands</a>
+        <a href="#permissions">Permissions</a>
+        <a href="#compatibility">Compatibility</a>
+        <a href="#troubleshooting">Troubleshooting</a>
+      </nav>
+
+      <div class="sidebar-note">
+        <strong>Version 1.3.1</strong>
+        <span>Made for Paper servers.</span>
+      </div>
+    </aside>
+
+    <main>
+      <section id="overview" class="hero section-block">
+        <div class="hero-text">
+          <p class="eyebrow">Paper plugin</p>
+          <h1>Custom items, blocks, recipes and visual armor made simple.</h1>
+          <p class="lead">
+            ItemsLite lets server owners add custom content without client-side mods. The plugin can generate and host the resource pack, then send it to players when they join.
+          </p>
+          <div class="quick-actions" aria-label="Quick links">
+            <a class="button primary" href="#install">Install</a>
+            <a class="button" href="#commands">Commands</a>
+            <a class="button" href="#armor">Armor guide</a>
+          </div>
+        </div>
+        <img class="hero-image" src="assets/itemslite-logo.png" alt="ItemsLite plugin artwork">
+      </section>
+
+      <section id="features" class="section-block">
+        <p class="eyebrow">What it does</p>
+        <h2>Main features</h2>
+        <div class="grid">
+          <article>
+            <h3>Custom Items</h3>
+            <p>Create textured items with names, lore, CustomModelData, durability, uses, cooldowns and actions.</p>
+          </article>
+          <article>
+            <h3>Custom Blocks</h3>
+            <p>Place custom-looking blocks in the world and drop the correct custom item when they are broken.</p>
+          </article>
+          <article>
+            <h3>Visual Armor</h3>
+            <p>Use real custom armor textures on modern Minecraft versions, with a simplified folder layout.</p>
+          </article>
+          <article>
+            <h3>Recipes and Drops</h3>
+            <p>Add shaped recipes, furnace-style recipes, mob drops and block drops from configuration files.</p>
+          </article>
+          <article>
+            <h3>Resource Pack Generator</h3>
+            <p>Generate the pack automatically from your textures and item settings.</p>
+          </article>
+          <article>
+            <h3>Admin Tools</h3>
+            <p>Use menus, diagnostics, exports and reload commands to build and test content faster.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="download" class="section-block two-column">
+        <div>
+          <p class="eyebrow">Get the plugin</p>
+          <h2>Download and free website hosting</h2>
+          <p>
+            Publish the plugin on Spigot and use this website as a simple documentation page. Since this is a static website, it can be hosted for free on services like GitHub Pages, Netlify or Cloudflare Pages.
+          </p>
+        </div>
+        <div class="note">
+          <h3>Useful links</h3>
+          <a class="button primary" href="https://www.spigotmc.org/resources/itemslite-custom-items-blocks-recipes-resource-pack-generator.136531/">Download on Spigot</a>
+          <a class="button" href="#install">Read installation guide</a>
+          <a class="button" href="#commands">View command list</a>
+        </div>
+      </section>
+
+      <section id="install" class="section-block">
+        <p class="eyebrow">Setup</p>
+        <h2>How to install</h2>
+        <ol class="steps">
+          <li>Download <code>ItemsLite.jar</code>.</li>
+          <li>Put the jar inside your server <code>plugins</code> folder.</li>
+          <li>Start the Paper server once.</li>
+          <li>Open <code>plugins/ItemsLite</code> and edit the generated files.</li>
+          <li>Add your textures in the plugin texture folders.</li>
+          <li>Run <code>/itemslite reload</code> and then <code>/itemslite reloadpack</code>.</li>
+          <li>Use <code>/itemslite pack</code> to send the resource pack again while testing.</li>
+        </ol>
+      </section>
+
+      <section id="resource-pack" class="section-block two-column">
+        <div>
+          <p class="eyebrow">Textures</p>
+          <h2>Automatic resource pack</h2>
+          <p>
+            ItemsLite builds the Minecraft resource pack from the textures and configuration inside the plugin folder. Players do not need to manually install the pack on their computer.
+          </p>
+          <p>
+            For a public server, set a public resource-pack URL in the config. For local testing, the built-in host can serve the pack from your server machine.
+          </p>
+        </div>
+        <div class="note">
+          <h3>Useful testing flow</h3>
+          <code>/itemslite reload</code>
+          <code>/itemslite reloadpack</code>
+          <code>/itemslite pack</code>
+          <code>/itemslite doctor</code>
+        </div>
+      </section>
+
+      <section id="armor" class="section-block two-column">
+        <div>
+          <p class="eyebrow">Modern armor</p>
+          <h2>How to add custom armor</h2>
+          <p>
+            Create one folder for each armor set. Put the item icons and the armor layer textures in the same place, then use the same model name in the item configuration.
+          </p>
+          <p>
+            Visual armor requires Minecraft/Paper 1.21.4 or newer. On 1.20.x the armor item can still exist, but the full visual armor texture is not supported by the client.
+          </p>
+        </div>
+        <pre><code>plugins/ItemsLite/textures/armor/ruby/
+  helmet.png
+  chestplate.png
+  leggings.png
+  boots.png
+  layer_1.png
+  layer_2.png</code></pre>
+      </section>
+
+      <section class="section-block two-column">
+        <div>
+          <p class="eyebrow">Armor config</p>
+          <h2>Example armor item</h2>
+          <p>
+            The <code>armor.model</code> value connects the item to the texture folder. In this example, the plugin uses <code>textures/armor/ruby</code>.
+          </p>
+        </div>
+        <pre><code>items:
+  ruby_helmet:
+    material: NETHERITE_HELMET
+    custom_model_data: 13000
+    texture: "ruby/helmet.png"
+    model: "generated"
+    name: "&cRuby Helmet"
+    armor:
+      enabled: true
+      slot: HEAD
+      model: "ruby"</code></pre>
+      </section>
+
+      <section id="blocks" class="section-block">
+        <p class="eyebrow">Blocks</p>
+        <h2>Custom blocks</h2>
+        <p>
+          ItemsLite can create custom block visuals by generating block models in the resource pack. When a player places a custom block item, the plugin stores which custom block it is and handles breaking, drops and protection from unwanted vanilla behavior.
+        </p>
+        <div class="simple-list">
+          <span>Place custom textured blocks</span>
+          <span>Drop the correct custom item</span>
+          <span>Use generated cube models</span>
+          <span>Run diagnostics with <code>/itemslite doctor</code></span>
+        </div>
+      </section>
+
+      <section id="commands" class="section-block">
+        <p class="eyebrow">Admin commands</p>
+        <h2>Commands</h2>
+        <div class="table">
+          <div><code>/itemslite</code><span>Show the main command help.</span></div>
+          <div><code>/itemslite menu [category]</code><span>Open the item browser menu.</span></div>
+          <div><code>/itemslite give &lt;player&gt; &lt;item&gt; [amount]</code><span>Give a custom item to a player.</span></div>
+          <div><code>/itemslite list</code><span>List loaded custom items.</span></div>
+          <div><code>/itemslite create &lt;id&gt;</code><span>Create a new item entry.</span></div>
+          <div><code>/itemslite delete &lt;item&gt;</code><span>Delete an item entry.</span></div>
+          <div><code>/itemslite info &lt;item&gt;</code><span>Show item information.</span></div>
+          <div><code>/itemslite settexture &lt;item&gt; &lt;file.png&gt;</code><span>Set an item texture.</span></div>
+          <div><code>/itemslite setmaterial &lt;item&gt; &lt;material&gt;</code><span>Change the base Minecraft material.</span></div>
+          <div><code>/itemslite setmodel &lt;item&gt; &lt;generated|handheld|cube&gt;</code><span>Change the generated model type.</span></div>
+          <div><code>/itemslite editor</code><span>Open the editor menu.</span></div>
+          <div><code>/itemslite pack [player]</code><span>Send the resource pack again.</span></div>
+          <div><code>/itemslite reloadpack</code><span>Regenerate the resource pack.</span></div>
+          <div><code>/itemslite reload</code><span>Reload ItemsLite configuration.</span></div>
+          <div><code>/itemslite doctor</code><span>Check common setup problems.</span></div>
+          <div><code>/itemslite exportfiles</code><span>Export generated files for inspection.</span></div>
+        </div>
+      </section>
+
+      <section id="permissions" class="section-block">
+        <p class="eyebrow">Access control</p>
+        <h2>Permissions</h2>
+        <div class="table compact">
+          <div><code>itemslite.admin</code><span>Access to all admin commands.</span></div>
+          <div><code>itemslite.command.give</code><span>Use the give command.</span></div>
+          <div><code>itemslite.command.menu</code><span>Open the item menu.</span></div>
+          <div><code>itemslite.command.editor</code><span>Open the editor menu.</span></div>
+          <div><code>itemslite.command.pack</code><span>Send the resource pack.</span></div>
+          <div><code>itemslite.command.reload</code><span>Reload plugin data.</span></div>
+        </div>
+      </section>
+
+      <section id="compatibility" class="section-block">
+        <p class="eyebrow">Versions</p>
+        <h2>Compatibility</h2>
+        <div class="status-grid">
+          <article>
+            <strong>Paper 1.20.x</strong>
+            <span>Custom items, blocks, recipes, drops and resource pack generation.</span>
+          </article>
+          <article>
+            <strong>Paper 1.21.4+</strong>
+            <span>All main features plus modern visual armor support.</span>
+          </article>
+          <article>
+            <strong>Latest Minecraft versions</strong>
+            <span>Best-effort support because ItemsLite avoids NMS for core features.</span>
+          </article>
+        </div>
+      </section>
+
+      <section id="troubleshooting" class="section-block">
+        <p class="eyebrow">Help</p>
+        <h2>Common problems</h2>
+        <div class="faq">
+          <article>
+            <h3>The texture does not appear</h3>
+            <p>Run <code>/itemslite reloadpack</code>, accept the resource pack again and check missing files with <code>/itemslite doctor</code>.</p>
+          </article>
+          <article>
+            <h3>Players cannot download the pack</h3>
+            <p>Make sure the resource-pack URL is reachable by players. Local addresses such as <code>127.0.0.1</code> only work on your own computer.</p>
+          </article>
+          <article>
+            <h3>Armor is not visually custom</h3>
+            <p>Visual armor needs Minecraft/Paper 1.21.4 or newer and valid <code>layer_1.png</code> and <code>layer_2.png</code> files.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
