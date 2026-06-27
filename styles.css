@@ -146,7 +146,12 @@ main {
 }
 
 .home-hero {
+  grid-template-columns: minmax(0, 1fr) 220px;
   min-height: min(640px, calc(100vh - 68px));
+}
+
+.home-hero-logo {
+  max-width: 220px;
 }
 
 .hero-text {
@@ -266,12 +271,12 @@ li {
 }
 
 .home-plugin-card {
-  grid-template-columns: 150px minmax(0, 1fr);
+  grid-template-columns: 96px minmax(0, 1fr);
 }
 
-.home-plugin-card img {
-  width: 150px;
-  height: 150px;
+.home-plugin-card .home-card-logo {
+  width: 96px;
+  height: 96px;
 }
 
 .grid,
@@ -460,6 +465,10 @@ pre {
     max-width: 300px;
   }
 
+  .home-hero-logo {
+    max-width: 180px;
+  }
+
   h1 {
     font-size: 40px;
   }
@@ -500,6 +509,10 @@ pre {
     max-width: 240px;
   }
 
+  .home-hero-logo {
+    max-width: 150px;
+  }
+
   .plugin-card {
     grid-template-columns: 76px minmax(0, 1fr);
     gap: 14px;
@@ -514,11 +527,10 @@ pre {
     grid-template-columns: 1fr;
   }
 
-  .home-plugin-card img {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 1;
-    max-width: 220px;
+  .home-plugin-card .home-card-logo {
+    width: 84px;
+    height: 84px;
+    max-width: none;
   }
 
 }
